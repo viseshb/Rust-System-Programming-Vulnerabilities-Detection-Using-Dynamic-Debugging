@@ -1,0 +1,11 @@
+[package]
+name = "nano_arena_vuln"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+nano_arena = "=0.5.1"
+
+[profile.dev]
+debug = true
+split-debuginfo = "off"

@@ -1,419 +1,135 @@
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS$ ~curl https://sh.rustup.rs -sSf | sh
-Command '~curl' not found, did you mean:
-  command 'curl' from snap curl (8.13.0)
-  command 'curl' from deb curl (8.5.0-2ubuntu10.6)
-See 'snap info <snapname>' for additional versions.
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS$ curl https://sh.rustup.rs -sSf | sh
-info: downloading installer
+    #8 0x562f8850732b in nano_arena::Arena$LT$T$GT$::alloc_with::h1b3e4093e2dba6c1 /home/visesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nano_arena-0.5.1/src/lib.rs:198:9 
+    #9 0x562f8850578a in core::ops::function::FnOnce::call_once::h611883424bfb6492 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
+    #10 0x562f885466ea in std::panic::catch_unwind::h8ad9b5de47da014c /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+    #11 0x562f885382df in std::panicking::try::do_call::h4ee586b5a5014448 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+    #12 0x562f8853ff1a in __rust_try std.ab53737f3e0643c2-cgu.02
+    #13 0x562f885466bd in std::panic::catch_unwind::h7615f4ac240c52c0 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+    #14 0x562f885060af in std::rt::lang_start::h5711719962688e32 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:198:5     
+    #15 0x562f88506abd in main (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x20aabd) (BuildId: caf8be623932c16b2b598fc99c1065c6fc0a6fd0)
+    #16 0x7f5a5a44928a in __libc_start_main csu/../csu/libc-start.c:360:3
+    #17 0x562f88449cb4 in _start (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x14dcb4) (BuildId: caf8be623932c16b2b598fc99c1065c6fc0a6fd0)
 
-Welcome to Rust!
-
-This will download and install the official compiler for the Rust
-programming language, and its package manager, Cargo.
-
-Rustup metadata and toolchains will be installed into the Rustup
-home directory, located at:
-
-  /home/visesh/.rustup
-
-This can be modified with the RUSTUP_HOME environment variable.
-
-The Cargo home directory is located at:
-
-  /home/visesh/.cargo
-
-This can be modified with the CARGO_HOME environment variable.
-
-The cargo, rustc, rustup and other commands will be added to
-Cargo's bin directory, located at:
-
-  /home/visesh/.cargo/bin
-
-This path will then be added to your PATH environment variable by
-modifying the profile files located at:
-
-  /home/visesh/.profile
-  /home/visesh/.bashrc
-
-You can uninstall at any time with rustup self uninstall and
-these changes will be reverted.
-
-Current installation options:
-
-
-   default host triple: x86_64-unknown-linux-gnu
-     default toolchain: stable (default)
-               profile: default
-  modify PATH variable: yes
-
-1) Proceed with standard installation (default - just press enter)
-2) Customize installation
-3) Cancel installation
->1
-
-info: profile set to 'default'
-info: default host triple is x86_64-unknown-linux-gnu
-info: syncing channel updates for 'stable-x86_64-unknown-linux-gnu'
-info: latest update on 2025-04-03, rust version 1.86.0 (05f9846f8 2025-03-31)
-info: downloading component 'cargo'
-info: downloading component 'clippy'
-info: downloading component 'rust-docs'
- 21.2 MiB /  21.2 MiB (100 %)   6.8 MiB/s in  3s
-info: downloading component 'rust-std'
- 27.1 MiB /  27.1 MiB (100 %)  10.5 MiB/s in  2s
-info: downloading component 'rustc'
- 72.8 MiB /  72.8 MiB (100 %)   8.8 MiB/s in  8s
-info: downloading component 'rustfmt'
-info: installing component 'cargo'
-info: installing component 'clippy'
-info: installing component 'rust-docs'
- 21.2 MiB /  21.2 MiB (100 %)  10.4 MiB/s in  1s
-info: installing component 'rust-std'
- 27.1 MiB /  27.1 MiB (100 %)  19.9 MiB/s in  1s
-info: installing component 'rustc'
- 72.8 MiB /  72.8 MiB (100 %)  21.0 MiB/s in  3s
-info: installing component 'rustfmt'
-info: default toolchain set to 'stable-x86_64-unknown-linux-gnu'
-
-  stable-x86_64-unknown-linux-gnu installed - rustc 1.86.0 (05f9846f8 2025-03-31)
-
-
-Rust is installed now. Great!
-
-To get started you may need to restart your current shell.
-This would reload your PATH environment variable to include
-Cargo's bin directory ($HOME/.cargo/bin).
-
-To configure your current shell, you need to source
-the corresponding env file under $HOME/.cargo.
-
-This is usually done by running one of the following (note the leading DOT):
-. "$HOME/.cargo/env"            # For sh/bash/zsh/ash/dash/pdksh
-source "$HOME/.cargo/env.fish"  # For fish
-source "$HOME/.cargo/env.nu"    # For nushell
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS$ rustup default nightly
-Command 'rustup' not found, but can be installed with:
-sudo snap install rustup  # version 1.27.1, or
-sudo apt  install rustup  # version 1.26.0-3
-See 'snap info rustup' for additional versions.
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS$ 
- *  History restored 
-
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS$ rustup default nightly
-info: syncing channel updates for 'nightly-x86_64-unknown-linux-gnu'
-info: latest update on 2025-04-25, rust version 1.88.0-nightly (d7ea436a0 2025-04-24)
-info: downloading component 'cargo'
-info: downloading component 'clippy'
-info: downloading component 'rust-docs'
- 20.0 MiB /  20.0 MiB (100 %)  13.1 MiB/s in  1s
-info: downloading component 'rust-std'
- 27.1 MiB /  27.1 MiB (100 %)   7.9 MiB/s in  3s
-info: downloading component 'rustc'
- 76.0 MiB /  76.0 MiB (100 %)  10.2 MiB/s in  8s
-info: downloading component 'rustfmt'
-info: installing component 'cargo'
-info: installing component 'clippy'
-info: installing component 'rust-docs'
- 20.0 MiB /  20.0 MiB (100 %)  10.7 MiB/s in  1s
-info: installing component 'rust-std'
- 27.1 MiB /  27.1 MiB (100 %)  19.1 MiB/s in  1s
-info: installing component 'rustc'
- 76.0 MiB /  76.0 MiB (100 %)  19.9 MiB/s in  3s
-info: installing component 'rustfmt'
-info: default toolchain set to 'nightly-x86_64-unknown-linux-gnu'
-
-  nightly-x86_64-unknown-linux-gnu installed - rustc 1.88.0-nightly (d7ea436a0 2025-04-24)
-
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS$ export RUSTFLAGS="-Zsanitizer=address"
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS$ cargo +nightly build -Zbuild-std --target x86_64-unknown-linux-gnu
-error: could not find `Cargo.toml` in `/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS` or any parent directory
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS$ cd Project_OS
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS$ cd nano_arena_vuln
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ cargo +nightly build -Zbuild-std --target x86_64-unknown-linux-gnu
-    Updating crates.io index
-  Downloaded nano_arena v0.5.1
-  Downloaded 1 crate (4.6KiB) in 0.12s
-error: "/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/Cargo.lock" does not exist, unable to build with the standard library, try:
-        rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ ^[[200~rustup component add rust-src --toolchain nightly
-^[[201~rustup: command not found
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ rustup component add rust-src --toolchain nightly
-info: downloading component 'rust-src'
-info: installing component 'rust-src'
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ export RUSTFLAGS="-Zsanitizer=address"
-cargo +nightly build -Zbuild-std --target x86_64-unknown-linux-gnu
-    Updating crates.io index
-  Downloaded getopts v0.2.21
-  Downloaded cfg-if v1.0.0
-  Downloaded adler2 v2.0.0
-  Downloaded addr2line v0.24.2
-  Downloaded rustc-literal-escaper v0.0.2
-  Downloaded rustc-demangle v0.1.24
-  Downloaded allocator-api2 v0.2.21
-  Downloaded miniz_oxide v0.8.8
-  Downloaded memchr v2.7.4
-  Downloaded hashbrown v0.15.2
-  Downloaded unicode-width v0.1.14
-  Downloaded gimli v0.31.1
-  Downloaded object v0.36.7
-  Downloaded libc v0.2.172
-  Downloaded compiler_builtins v0.1.156
-  Downloaded 15 crates (2.3MiB) in 0.49s
-   Compiling compiler_builtins v0.1.156
-   Compiling core v0.0.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core)
+SUMMARY: AddressSanitizer: heap-use-after-free /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/num.rs:225:28 in core::fmt::num::imp::_$LT$impl$u20$core..fmt..Display$u20$for$u20$i32$GT$::fmt::h1fa7afdd21967104
+Shadow bytes around the buggy address:
+  0x7bda596dfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7bda596dfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7bda596dff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7bda596dff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x7bda596e0000: fa fa fa fa 00 00 00 00 00 00 00 00 00 00 05 fa
+=>0x7bda596e0080: fa fa fa fa fd[fd]fd fd fd fd fd fd fd fd fd fd
+  0x7bda596e0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bda596e0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bda596e0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bda596e0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x7bda596e0300: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2450==ABORTING
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ ./target/x86_64-unknown-linux-gnu/debug/safe_code
+==2450==ABORTING
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ ./target/x86_64-unknown-linux-gnu/debug/safe_code
+-bash: ./target/x86_64-unknown-linux-gnu/debug/safe_code: No such file or directory
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ cargo +nightly build -Z build-std --target x86_64-unknown-linux-gnu --bin safe_cod
+e
+e
    Compiling libc v0.2.172
-   Compiling object v0.36.7
-   Compiling std v0.0.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std)
-   Compiling rustc-std-workspace-core v1.99.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/rustc-std-workspace-core)
-   Compiling alloc v0.0.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc)
-   Compiling cfg-if v1.0.0
-   Compiling memchr v2.7.4
-   Compiling adler2 v2.0.0
-   Compiling rustc-demangle v0.1.24
    Compiling unwind v0.0.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/unwind)
-   Compiling rustc-std-workspace-alloc v1.99.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/rustc-std-workspace-alloc)
-   Compiling panic_unwind v0.0.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/panic_unwind)
+   Compiling libc v0.2.172
+   Compiling unwind v0.0.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/unwind)
    Compiling panic_abort v0.0.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/panic_abort)
-   Compiling gimli v0.31.1
-   Compiling miniz_oxide v0.8.8
-   Compiling hashbrown v0.15.2
-   Compiling std_detect v0.1.5 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/stdarch/crates/std_detect)
-   Compiling addr2line v0.24.2
-   Compiling rustc-std-workspace-std v1.99.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/rustc-std-workspace-std)
-   Compiling rustc-literal-escaper v0.0.2
-   Compiling proc_macro v0.0.0 (/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/proc_macro)
+Array after safe swap: [300, 200, 100, 400]
+
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ cargo +nightly miri run --bin unsafe_code
+Preparing a sysroot for Miri (target: x86_64-unknown-linux-gnu)... done
    Compiling nano_arena v0.5.1
    Compiling nano_arena_vuln v0.1.0 (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln)
-warning: function `main` is never used
- --> src/safe_code.rs:3:4
-  |
-3 | fn main() {
-  |    ^^^^
-  |
-  = note: `#[warn(dead_code)]` on by default
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.72s
+     Running `/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo-miri runner target/miri/x86_64-unknown-linux-gnu/debug/unsafe_code`
+Array after safe swap: [300, 200, 100, 400]
+error: Undefined Behavior: out-of-bounds pointer use: alloc1216 has been freed, so this pointer is dangling
+  --> src/bin/unsafe_code.rs:25:48
+   |
+25 |         println!("Accessing after free: {:?}", *leaked_val);
+   |                                                ^^^^^^^^^^^ out-of-bounds pointer use: alloc1216 has been freed, so this pointer is dangling
+   |
+   = help: this indicates a bug in the program: it performed an invalid operation, and caused Undefined Behavior
+   = help: see https://doc.rust-lang.org/nightly/reference/behavior-considered-undefined.html for further information
+help: alloc1216 was allocated here:
+  --> src/bin/unsafe_code.rs:5:15
+   |
+5  |     let arr = arena.alloc([100, 200, 300, 400]); // allocate an array of 4 integers
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: alloc1216 was deallocated here:
+  --> src/bin/unsafe_code.rs:22:5
+   |
+22 |     drop(arena);
+   |     ^^^^^^^^^^^
+   = note: BACKTRACE (of the first span):
+   = note: inside `main` at src/bin/unsafe_code.rs:25:48: 25:59
+   = note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
 
-warning: function `main` is never used
- --> src/unsafe_code.rs:3:4
-  |
-3 | fn main() {
-  |    ^^^^
+note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
 
-warning: `nano_arena_vuln` (lib) generated 2 warnings
-    Finished `dev` profile [unoptimized + debuginfo] target(s) in 32.69s
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ ^[[200~./target/x86_64-unknown-linux-gnu/debug/unsafe_code
--bash: ./target/x86_64-unknown-linux-gnu/debug/unsafe_code: No such file or directory
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ ./target/x86_64-unknown-linux-gnu/debug/unsafe_code
-After safe swap: a = 200, b = 200
-=================================================================
-==3284==ERROR: AddressSanitizer: heap-use-after-free on address 0x7b5f835e0028 at pc 0x564cb41dabf9 bp 0x7ffd4340a960 sp 0x7ffd4340a958
-READ of size 4 at 0x7b5f835e0028 thread T0
-    #0 0x564cb41dabf8 in core::fmt::num::imp::_$LT$impl$u20$core..fmt..Display$u20$for$u20$i32$GT$::fmt::h0c7f94d1c199cb22 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/num.rs:225:28
-    #1 0x564cb41e08e9 in core::fmt::rt::Argument::fmt::hfab2d510218639e3 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/rt.rs:179:76
-    #2 0x564cb41e2bff in core::fmt::write::h410f426f5a6e1ee1 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/mod.rs:1481:21
-    #3 0x564cb3fbdfd7 in std::io::default_write_fmt::h4126a7d345014154 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/mod.rs:639:11   
-    #4 0x564cb404aa2e in std::io::Write::write_fmt::h32ad87acefb881ad /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/mod.rs:1914:13   
-    #5 0x564cb40496e2 in _$LT$$RF$std..io..stdio..Stdout$u20$as$u20$std..io..Write$GT$::write_fmt::h7050ebac8b937e9e /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/stdio.rs:834:9
-    #6 0x564cb40494d9 in _$LT$std..io..stdio..Stdout$u20$as$u20$std..io..Write$GT$::write_fmt::h0238be28c417d925 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/stdio.rs:808:9
-    #7 0x564cb404a00c in std::io::stdio::print_to::h676edb046042514b /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/stdio.rs:1164:21  
-    #8 0x564cb404a8c2 in std::io::stdio::_print::he4daf1bcb428222c /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/stdio.rs:1275:5     
-    #9 0x564cb3fb47a4 in unsafe_code::main::hb40124f14a30e7a9 /mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/src/unsafe_code.rs:25:9
-    #10 0x564cb3fb4b2a in core::ops::function::FnOnce::call_once::hfaf9f7b080d2958a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
-    #11 0x564cb3fb31bd in std::sys::backtrace::__rust_begin_short_backtrace::h12576ff274c41749 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/backtrace.rs:152:18
-    #12 0x564cb3fb1ae3 in std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::h0e4c3bbcfcdddacb /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:199:18
-    #13 0x564cb4113ae1 in core::ops::function::impls::_$LT$impl$u20$core..ops..function..FnOnce$LT$A$GT$$u20$for$u20$$RF$F$GT$::call_once::h6b18743204aec450 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:284:13
-    #14 0x564cb40182d9 in std::panicking::try::do_call::he5f842d0b415ebe0 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
-    #15 0x564cb402074a in __rust_try std.7984a7df9b27f93e-cgu.04
-    #16 0x564cb4017b3e in std::panicking::try::h6d50a539ba2f0595 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19      
-    #17 0x564cb411de6a in std::panic::catch_unwind::h4d038c7797662ab0 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14     
-    #18 0x564cb400ac03 in std::rt::lang_start_internal::_$u7b$$u7b$closure$u7d$$u7d$::heafbb8f49adeefae /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:168:24
-    #19 0x564cb40181df in std::panicking::try::do_call::hd07a4bb07dd17aca /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
-    #20 0x564cb402074a in __rust_try std.7984a7df9b27f93e-cgu.04
-    #21 0x564cb40176e6 in std::panicking::try::h25c6c6ab351d346b /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
-    #22 0x564cb411de8d in std::panic::catch_unwind::h4fcd212683c60b4a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14     
-    #23 0x564cb400a972 in std::rt::lang_start_internal::h3aba6ad26763589b /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:164:5     
-    #24 0x564cb3fb1a4f in std::rt::lang_start::h1a0b5d72759f5a37 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:198:5
-    #25 0x564cb3fb490d in main (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x20a90d) (BuildId: 5a246bdb71603a94758b96088191f22a1cd0afbd)
-    #26 0x7eff843c91c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 42c84c92e6f98126b3e2230ebfdead22c235b667)
-    #27 0x7eff843c928a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 42c84c92e6f98126b3e2230ebfdead22c235b667)
-    #28 0x564cb3ef6fc4 in _start (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x14cfc4) (BuildId: 5a246bdb71603a94758b96088191f22a1cd0afbd)
+error: aborting due to 1 previous error
 
-0x7b5f835e0028 is located 8 bytes inside of 64-byte region [0x7b5f835e0020,0x7b5f835e0060)
-freed by thread T0 here:
-    #0 0x564cb3f83356 in free /rustc/llvm/src/llvm-project/compiler-rt/lib/asan/asan_malloc_linux.cpp:51:3
-    #1 0x564cb4077548 in std::sys::alloc::unix::_$LT$impl$u20$core..alloc..global..GlobalAlloc$u20$for$u20$std..alloc..System$GT$::dealloc::hf026afcde5ee0cbb /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:48:18
-    #2 0x564cb41ca618 in _$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$::deallocate::hc3b5e274259ca80f /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/alloc.rs:270:22
-    #3 0x564cb41cf554 in alloc::raw_vec::RawVecInner$LT$A$GT$::deallocate::h6bbfde66c99b300b /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:757:17
-    #4 0x564cb3fb51c4 in _$LT$alloc..raw_vec..RawVec$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$::drop::h55b4993fbad19a51 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:406:18
-    #5 0x564cb3fb4b2a in core::ops::function::FnOnce::call_once::hfaf9f7b080d2958a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
-    #6 0x564cb411de6a in std::panic::catch_unwind::h4d038c7797662ab0 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14      
-    #7 0x564cb40181df in std::panicking::try::do_call::hd07a4bb07dd17aca /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
-    #8 0x564cb402074a in __rust_try std.7984a7df9b27f93e-cgu.04
-    #9 0x564cb411de8d in std::panic::catch_unwind::h4fcd212683c60b4a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14      
-    #10 0x564cb3fb1a4f in std::rt::lang_start::h1a0b5d72759f5a37 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:198:5
-    #11 0x564cb3fb490d in main (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x20a90d) (BuildId: 5a246bdb71603a94758b96088191f22a1cd0afbd)
-    #12 0x7eff843c928a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 42c84c92e6f98126b3e2230ebfdead22c235b667)
-    #13 0x564cb3ef6fc4 in _start (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x14cfc4) (BuildId: 5a246bdb71603a94758b96088191f22a1cd0afbd)
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ cargo +nightly miri run --bin safe_code
+   Compiling nano_arena_vuln v0.1.0 (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.52s
+     Running `/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo-miri runner target/miri/x86_64-unknown-linux-gnu/debug/safe_code`
+Array after safe swap: [300, 200, 100, 400]
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ MIRIFLAGS=-Zmiri-backtrace=full
+visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ cargo +nightly miri run --bin unsafe_code
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.07s
+     Running `/home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/bin/cargo-miri runner target/miri/x86_64-unknown-linux-gnu/debug/unsafe_code`
+Array after safe swap: [300, 200, 100, 400]
+error: Undefined Behavior: out-of-bounds pointer use: alloc1216 has been freed, so this pointer is dangling
+  --> src/bin/unsafe_code.rs:25:48
+   |
+25 |         println!("Accessing after free: {:?}", *leaked_val);
+   |                                                ^^^^^^^^^^^ out-of-bounds pointer use: alloc1216 has been freed, so this pointer is dangling
+   |
+   = help: this indicates a bug in the program: it performed an invalid operation, and caused Undefined Behavior
+   = help: see https://doc.rust-lang.org/nightly/reference/behavior-considered-undefined.html for further information
+help: alloc1216 was allocated here:
+  --> src/bin/unsafe_code.rs:5:15
+   |
+5  |     let arr = arena.alloc([100, 200, 300, 400]); // allocate an array of 4 integers
+   |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+help: alloc1216 was deallocated here:
+  --> src/bin/unsafe_code.rs:22:5
+   |
+22 |     drop(arena);
+   |     ^^^^^^^^^^^
+   = note: BACKTRACE (of the first span):
+   = note: inside `main` at src/bin/unsafe_code.rs:25:48: 25:59
+   = note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
 
-previously allocated by thread T0 here:
-    #0 0x564cb3f835f4 in malloc /rustc/llvm/src/llvm-project/compiler-rt/lib/asan/asan_malloc_linux.cpp:67:3
-    #1 0x564cb407728b in std::sys::alloc::unix::_$LT$impl$u20$core..alloc..global..GlobalAlloc$u20$for$u20$std..alloc..System$GT$::alloc::hfa0486f25e921a6a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:14:22
-    #2 0x564cb40e2567 in __rustc::__rdl_alloc /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/alloc.rs:402:13
-    #3 0x564cb41c9c94 in alloc::alloc::Global::alloc_impl::h33c922757f34362e /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/alloc.rs:188:73
-    #4 0x564cb41ca4d8 in _$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$::allocate::h25937cdfc2930196 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/alloc.rs:249:9
-    #5 0x564cb41ce553 in alloc::raw_vec::RawVecInner$LT$A$GT$::grow_amortized::h1273abf1e3e7929d /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:664:19
-    #6 0x564cb41cd8b9 in alloc::raw_vec::RawVecInner$LT$A$GT$::grow_one::h74faf4ac4fc27d92 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:571:27
-    #7 0x564cb3fb2666 in nano_arena::Arena$LT$T$GT$::alloc_with_idx::h37ef5462b32474a8 /home/visesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nano_arena-0.5.1/src/lib.rs:193:9      
-    #8 0x564cb3fb2241 in nano_arena::Arena$LT$T$GT$::alloc_with::hcc3c29cb13681f02 /home/visesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nano_arena-0.5.1/src/lib.rs:198:9
-    #9 0x564cb3fb4b2a in core::ops::function::FnOnce::call_once::hfaf9f7b080d2958a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
-    #10 0x564cb411de6a in std::panic::catch_unwind::h4d038c7797662ab0 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14     
-    #11 0x564cb40181df in std::panicking::try::do_call::hd07a4bb07dd17aca /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
-    #12 0x564cb402074a in __rust_try std.7984a7df9b27f93e-cgu.04
-    #13 0x564cb411de8d in std::panic::catch_unwind::h4fcd212683c60b4a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14     
-    #14 0x564cb3fb1a4f in std::rt::lang_start::h1a0b5d72759f5a37 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:198:5
-    #15 0x564cb3fb490d in main (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x20a90d) (BuildId: 5a246bdb71603a94758b96088191f22a1cd0afbd)
-    #16 0x7eff843c928a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 42c84c92e6f98126b3e2230ebfdead22c235b667)
-    #17 0x564cb3ef6fc4 in _start (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x14cfc4) (BuildId: 5a246bdb71603a94758b96088191f22a1cd0afbd)
+note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
 
-SUMMARY: AddressSanitizer: heap-use-after-free /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/num.rs:225:28 in core::fmt::num::imp::_$LT$impl$u20$core..fmt..Display$u20$for$u20$i32$GT$::fmt::h0c7f94d1c199cb22
-Shadow bytes around the buggy address:
-  0x7b5f835dfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x7b5f835dfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x7b5f835dfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x7b5f835dff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x7b5f835dff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-=>0x7b5f835e0000: fa fa fa fa fd[fd]fd fd fd fd fd fd fa fa fa fa
-  0x7b5f835e0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x7b5f835e0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x7b5f835e0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x7b5f835e0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x7b5f835e0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-Shadow byte legend (one shadow byte represents 8 application bytes):
-  Addressable:           00
-  Partially addressable: 01 02 03 04 05 06 07
-  Heap left redzone:       fa
-  Freed heap region:       fd
-  Stack left redzone:      f1
-  Stack mid redzone:       f2
-  Stack right redzone:     f3
-  Stack after return:      f5
-  Stack use after scope:   f8
-  Global redzone:          f9
-  Global init order:       f6
-  Poisoned by user:        f7
-  Container overflow:      fc
-  Array cookie:            ac
-  Intra object redzone:    bb
-  ASan internal:           fe
-  Left alloca redzone:     ca
-  Right alloca redzone:    cb
-==3284==ABORTING
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ ./target/x86_64-unknown-linux-gnu/debug/unsafe_code
-After safe swap: a = 200, b = 200
-=================================================================
-==3314==ERROR: AddressSanitizer: heap-use-after-free on address 0x7b6d06fe0028 at pc 0x55dc06711bf9 bp 0x7ffea9fd9d00 sp 0x7ffea9fd9cf8
-READ of size 4 at 0x7b6d06fe0028 thread T0
-    #0 0x55dc06711bf8 in core::fmt::num::imp::_$LT$impl$u20$core..fmt..Display$u20$for$u20$i32$GT$::fmt::h0c7f94d1c199cb22 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/num.rs:225:28
-    #1 0x55dc067178e9 in core::fmt::rt::Argument::fmt::hfab2d510218639e3 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/rt.rs:179:76
-    #2 0x55dc06719bff in core::fmt::write::h410f426f5a6e1ee1 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/mod.rs:1481:21
-    #3 0x55dc064f4fd7 in std::io::default_write_fmt::h4126a7d345014154 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/mod.rs:639:11   
-    #4 0x55dc06581a2e in std::io::Write::write_fmt::h32ad87acefb881ad /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/mod.rs:1914:13   
-    #5 0x55dc065806e2 in _$LT$$RF$std..io..stdio..Stdout$u20$as$u20$std..io..Write$GT$::write_fmt::h7050ebac8b937e9e /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/stdio.rs:834:9
-    #6 0x55dc065804d9 in _$LT$std..io..stdio..Stdout$u20$as$u20$std..io..Write$GT$::write_fmt::h0238be28c417d925 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/stdio.rs:808:9
-    #7 0x55dc0658100c in std::io::stdio::print_to::h676edb046042514b /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/stdio.rs:1164:21  
-    #8 0x55dc065818c2 in std::io::stdio::_print::he4daf1bcb428222c /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/io/stdio.rs:1275:5     
-    #9 0x55dc064eb7a4 in unsafe_code::main::hb40124f14a30e7a9 /mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/src/unsafe_code.rs:25:9
-    #10 0x55dc064ebb2a in core::ops::function::FnOnce::call_once::hfaf9f7b080d2958a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
-    #11 0x55dc064ea1bd in std::sys::backtrace::__rust_begin_short_backtrace::h12576ff274c41749 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/backtrace.rs:152:18
-    #12 0x55dc064e8ae3 in std::rt::lang_start::_$u7b$$u7b$closure$u7d$$u7d$::h0e4c3bbcfcdddacb /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:199:18
-    #13 0x55dc0664aae1 in core::ops::function::impls::_$LT$impl$u20$core..ops..function..FnOnce$LT$A$GT$$u20$for$u20$$RF$F$GT$::call_once::h6b18743204aec450 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:284:13
-    #14 0x55dc0654f2d9 in std::panicking::try::do_call::he5f842d0b415ebe0 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
-    #15 0x55dc0655774a in __rust_try std.7984a7df9b27f93e-cgu.04
-    #16 0x55dc0654eb3e in std::panicking::try::h6d50a539ba2f0595 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19      
-    #17 0x55dc06654e6a in std::panic::catch_unwind::h4d038c7797662ab0 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14     
-    #18 0x55dc06541c03 in std::rt::lang_start_internal::_$u7b$$u7b$closure$u7d$$u7d$::heafbb8f49adeefae /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:168:24
-    #19 0x55dc0654f1df in std::panicking::try::do_call::hd07a4bb07dd17aca /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
-    #20 0x55dc0655774a in __rust_try std.7984a7df9b27f93e-cgu.04
-    #21 0x55dc0654e6e6 in std::panicking::try::h25c6c6ab351d346b /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
-    #22 0x55dc06654e8d in std::panic::catch_unwind::h4fcd212683c60b4a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14     
-    #23 0x55dc06541972 in std::rt::lang_start_internal::h3aba6ad26763589b /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:164:5     
-    #24 0x55dc064e8a4f in std::rt::lang_start::h1a0b5d72759f5a37 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:198:5
-    #25 0x55dc064eb90d in main (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x20a90d) (BuildId: 5a246bdb71603a94758b96088191f22a1cd0afbd)
-    #26 0x7f0d07dbf1c9  (/lib/x86_64-linux-gnu/libc.so.6+0x2a1c9) (BuildId: 42c84c92e6f98126b3e2230ebfdead22c235b667)
-    #27 0x7f0d07dbf28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 42c84c92e6f98126b3e2230ebfdead22c235b667)
-    #28 0x55dc0642dfc4 in _start (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x14cfc4) (BuildId: 5a246bdb71603a94758b96088191f22a1cd0afbd)
-
-0x7b6d06fe0028 is located 8 bytes inside of 64-byte region [0x7b6d06fe0020,0x7b6d06fe0060)
-freed by thread T0 here:
-    #0 0x55dc064ba356 in free /rustc/llvm/src/llvm-project/compiler-rt/lib/asan/asan_malloc_linux.cpp:51:3
-    #1 0x55dc065ae548 in std::sys::alloc::unix::_$LT$impl$u20$core..alloc..global..GlobalAlloc$u20$for$u20$std..alloc..System$GT$::dealloc::hf026afcde5ee0cbb /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:48:18
-    #2 0x55dc06701618 in _$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$::deallocate::hc3b5e274259ca80f /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/alloc.rs:270:22
-    #3 0x55dc06706554 in alloc::raw_vec::RawVecInner$LT$A$GT$::deallocate::h6bbfde66c99b300b /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:757:17
-    #4 0x55dc064ec1c4 in _$LT$alloc..raw_vec..RawVec$LT$T$C$A$GT$$u20$as$u20$core..ops..drop..Drop$GT$::drop::h55b4993fbad19a51 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:406:18
-    #5 0x55dc064ebb2a in core::ops::function::FnOnce::call_once::hfaf9f7b080d2958a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
-    #6 0x55dc06654e6a in std::panic::catch_unwind::h4d038c7797662ab0 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14      
-    #7 0x55dc0654f1df in std::panicking::try::do_call::hd07a4bb07dd17aca /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
-    #8 0x55dc0655774a in __rust_try std.7984a7df9b27f93e-cgu.04
-    #9 0x55dc06654e8d in std::panic::catch_unwind::h4fcd212683c60b4a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14      
-    #10 0x55dc064e8a4f in std::rt::lang_start::h1a0b5d72759f5a37 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:198:5
-    #11 0x55dc064eb90d in main (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x20a90d) (BuildId: 5a246bdb71603a94758b96088191f22a1cd0afbd)
-    #12 0x7f0d07dbf28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 42c84c92e6f98126b3e2230ebfdead22c235b667)
-    #13 0x55dc0642dfc4 in _start (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x14cfc4) (BuildId: 5a246bdb71603a94758b96088191f22a1cd0afbd)
-
-previously allocated by thread T0 here:
-    #0 0x55dc064ba5f4 in malloc /rustc/llvm/src/llvm-project/compiler-rt/lib/asan/asan_malloc_linux.cpp:67:3
-    #1 0x55dc065ae28b in std::sys::alloc::unix::_$LT$impl$u20$core..alloc..global..GlobalAlloc$u20$for$u20$std..alloc..System$GT$::alloc::hfa0486f25e921a6a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/sys/alloc/unix.rs:14:22
-    #2 0x55dc06619567 in __rustc::__rdl_alloc /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/alloc.rs:402:13
-    #3 0x55dc06700c94 in alloc::alloc::Global::alloc_impl::h33c922757f34362e /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/alloc.rs:188:73
-    #4 0x55dc067014d8 in _$LT$alloc..alloc..Global$u20$as$u20$core..alloc..Allocator$GT$::allocate::h25937cdfc2930196 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/alloc.rs:249:9
-    #5 0x55dc06705553 in alloc::raw_vec::RawVecInner$LT$A$GT$::grow_amortized::h1273abf1e3e7929d /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:664:19
-    #6 0x55dc067048b9 in alloc::raw_vec::RawVecInner$LT$A$GT$::grow_one::h74faf4ac4fc27d92 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/alloc/src/raw_vec/mod.rs:571:27
-    #7 0x55dc064e9666 in nano_arena::Arena$LT$T$GT$::alloc_with_idx::h37ef5462b32474a8 /home/visesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nano_arena-0.5.1/src/lib.rs:193:9      
-    #8 0x55dc064e9241 in nano_arena::Arena$LT$T$GT$::alloc_with::hcc3c29cb13681f02 /home/visesh/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/nano_arena-0.5.1/src/lib.rs:198:9
-    #9 0x55dc064ebb2a in core::ops::function::FnOnce::call_once::hfaf9f7b080d2958a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:250:5
-    #10 0x55dc06654e6a in std::panic::catch_unwind::h4d038c7797662ab0 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14     
-    #11 0x55dc0654f1df in std::panicking::try::do_call::hd07a4bb07dd17aca /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
-    #12 0x55dc0655774a in __rust_try std.7984a7df9b27f93e-cgu.04
-    #13 0x55dc06654e8d in std::panic::catch_unwind::h4fcd212683c60b4a /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14     
-    #14 0x55dc064e8a4f in std::rt::lang_start::h1a0b5d72759f5a37 /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/rt.rs:198:5
-    #15 0x55dc064eb90d in main (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x20a90d) (BuildId: 5a246bdb71603a94758b96088191f22a1cd0afbd)
-    #16 0x7f0d07dbf28a in __libc_start_main (/lib/x86_64-linux-gnu/libc.so.6+0x2a28a) (BuildId: 42c84c92e6f98126b3e2230ebfdead22c235b667)
-    #17 0x55dc0642dfc4 in _start (/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln/target/x86_64-unknown-linux-gnu/debug/unsafe_code+0x14cfc4) (BuildId: 5a246bdb71603a94758b96088191f22a1cd0afbd)
-
-SUMMARY: AddressSanitizer: heap-use-after-free /home/visesh/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/fmt/num.rs:225:28 in core::fmt::num::imp::_$LT$impl$u20$core..fmt..Display$u20$for$u20$i32$GT$::fmt::h0c7f94d1c199cb22
-Shadow bytes around the buggy address:
-  0x7b6d06fdfd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x7b6d06fdfe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x7b6d06fdfe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x7b6d06fdff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-  0x7b6d06fdff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
-=>0x7b6d06fe0000: fa fa fa fa fd[fd]fd fd fd fd fd fd fa fa fa fa
-  0x7b6d06fe0080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x7b6d06fe0100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x7b6d06fe0180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x7b6d06fe0200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-  0x7b6d06fe0280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
-Shadow byte legend (one shadow byte represents 8 application bytes):
-  Addressable:           00
-  Partially addressable: 01 02 03 04 05 06 07
-  Heap left redzone:       fa
-  Freed heap region:       fd
-  Stack left redzone:      f1
-  Stack mid redzone:       f2
-  Stack right redzone:     f3
-  Stack after return:      f5
-  Stack use after scope:   f8
-  Global redzone:          f9
-  Global init order:       f6
-  Poisoned by user:        f7
-  Container overflow:      fc
-  Array cookie:            ac
-  Intra object redzone:    bb
-  ASan internal:           fe
-  Left alloca redzone:     ca
-  Right alloca redzone:    cb
-==3314==ABORTING
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ ^[[200~./target/x86_64-unknown-linux-gnu/debug/safe_code
--bash: ./target/x86_64-unknown-linux-gnu/debug/safe_code: No such file or directory
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ ./target/x86_64-unknown-linux-gnu/debug/safe_code
-After swap: a = 200, b = 100
-visesh@Visesh:/mnt/c/Users/vises/OneDrive/Desktop/Masters_TAMUSA/Sem1/OS/Project_OS/nano_arena_vuln$ 
+error: aborting due to 1 previous error
